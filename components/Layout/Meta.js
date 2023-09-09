@@ -11,7 +11,7 @@ const Meta = ({ title, keywords, description, image }) => {
       <meta name="og:description" content={description} />
       <meta name="og:image" content={image}></meta>
       <meta charSet="utf-8" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <title>{title}</title>
     </Head>
