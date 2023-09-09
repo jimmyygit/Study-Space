@@ -26,7 +26,7 @@ Meta.propTypes = {
 };
 
 Meta.defaultProps = {
-  title: 'Startup',
+  title: 'Productify',
   keywords: 'cool startup',
   description: '',
   image: '',

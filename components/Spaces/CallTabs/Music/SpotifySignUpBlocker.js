@@ -27,8 +27,8 @@ const SpotifySignUpBlocker = ({ loading }) => {
   const router = useRouter();
 
   const handleClicked = () => {
-    document.cookie = `productify_roomID=${roomId}; path=/`;
-    router.push(spotifyAuthURL);
+    // document.cookie = `productify_roomID=${roomId}; path=/`;
+    // router.push(spotifyAuthURL);
   };
 
   return (

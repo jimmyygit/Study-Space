@@ -63,7 +63,7 @@ const CallOptions = () => {
           {isMyAudioEnabled ? <Mic /> : <MicOff />}
         </IconButton>
         <IconButton onClick={toggleMyVideo} size="large">
-          {isMyVideoEnabled ? <Videocam /> : <VideocamOff />}
+          {isMyVideoEnabled ? <Videocam /> : <VideocamOff className='text-red-500'/>}
         </IconButton>
         <IconButton onClick={shareScreen} size="large">
           <ScreenShareIcon />

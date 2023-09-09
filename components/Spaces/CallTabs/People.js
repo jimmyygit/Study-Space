@@ -23,9 +23,9 @@ const People = ({ participants, username }) => {
 
   return (
     <div className="p-2">
-      {t('LABEL_PEOPLE')}
+      Participants
       <Button variant="contained" color="primary" fullWidth className="mt-1 mb-2" onClick={() => setModalOpen(true)}>
-        {t('LABEL_INVITE')}
+        INVITE
       </Button>
       {participants.map((p) => (
         <p key={uniqueId(p)}>
@@ -48,7 +48,7 @@ const People = ({ participants, username }) => {
           </Typography>
           <CopyToClipboard text={roomId.id}>
             <Button variant="contained" color="primary" fullWidth startIcon={<Assignment fontSize="large" />}>
-              {t('LABEL_COPY_ROOM_ID')}
+              Copy Room Id
             </Button>
           </CopyToClipboard>
         </Grid>

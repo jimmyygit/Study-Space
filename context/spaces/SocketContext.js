@@ -395,9 +395,12 @@ export const SocketProvider = ({ loading, username, role, children }) => {
       return prev;
     });
 
-    router.push(`/dashboard`);
+    router.push(`/`);
     setTimeout(() => {
       window.location.reload();
+      setTimeout(() => {
+        router.push(`/`);
+      }, 4000);
     }, 2000);
   };
 

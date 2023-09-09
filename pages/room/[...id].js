@@ -32,7 +32,7 @@ const Room = ({ roomId, spotifyAuthURL }) => {
 
   const initRecoilState = () => {
     setRoomId(roomId);
-    setSpotifyAuthURL(spotifyAuthURL);
+    // setSpotifyAuthURL(spotifyAuthURL);
     if (router.query && router.query.data) {
       const spotifyData = JSON.parse(router.query.data);
 
