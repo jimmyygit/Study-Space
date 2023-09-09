@@ -4,12 +4,7 @@ import Typography from '@mui/material/Typography';
 
 const BigStat = ({ stat }) => {
   return (
-    <Grid
-      item
-      xs={12}
-      sm={6}
-      md={4}
-      className="flex flex-col items-center justify-around">
+    <Grid item xs={12} sm={6} md={4} className="flex flex-col items-center justify-around">
       <Typography variant="h2" gutterBottom>
         {stat.score}
       </Typography>

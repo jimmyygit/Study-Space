@@ -41,7 +41,8 @@ const MessageOptions = ({ selectedIndex, setSelectedIndex, options }) => {
         onClose={handleClose}
         MenuListProps={{
           role: 'listbox',
-        }}>
+        }}
+      >
         <MenuItem selected={selectedIndex == null} onClick={() => handleMenuItemClick(null)}>
           Everyone
         </MenuItem>

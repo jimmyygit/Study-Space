@@ -21,7 +21,8 @@ const NavDrawer = ({ isOpen, setIsOpen, handleSignUp, handleLogIn }) => {
         className="w-64 flex-grow"
         role="presentation"
         onClick={() => setIsOpen(false)}
-        onKeyDown={() => setIsOpen(false)}>
+        onKeyDown={() => setIsOpen(false)}
+      >
         <List>
           <ListItem button>
             <ListItemIcon>

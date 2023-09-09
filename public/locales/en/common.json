@@ -72,5 +72,4 @@
   "LABEL_SUCCESS_UPDATE_PASSWORD": "Password updated succesfully 😃",
   "LABEL_ERROR_SERVER": "Internal Server Error",
   "LABEL_ERROR_THIRD_PARTY_PASSWORD": "Cannot change password for users signed up through third party services like Google or Facebook."
-  
 }

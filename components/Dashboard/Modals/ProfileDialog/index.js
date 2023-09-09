@@ -191,7 +191,8 @@ const ProfileDialog = ({ user, isOpen, handleClose, tabs }) => {
       maxWidth="lg"
       className={classes.dialogRoot}
       aria-labelledby="Edit Profile Dialog"
-      aria-describedby="Dialog to Edit Profile">
+      aria-describedby="Dialog to Edit Profile"
+    >
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <Grid container direction="row" className="pt-4">
           {/* Left sidebar for md+ */}
@@ -209,7 +210,8 @@ const ProfileDialog = ({ user, isOpen, handleClose, tabs }) => {
                         'pl-4',
                         classes.tab,
                         index === tabIndex && classes.activeTab,
-                      ])}>
+                      ])}
+                    >
                       {tab.tabName}
                     </Button>
                   </Tab>
@@ -265,7 +267,8 @@ const ProfileDialog = ({ user, isOpen, handleClose, tabs }) => {
                                   'pl-4',
                                   classes.tab,
                                   index === tabIndex && classes.activeTab,
-                                ])}>
+                                ])}
+                              >
                                 {tab.tabName}
                               </Button>
                             </Tab>
@@ -323,7 +326,8 @@ const ProfileDialog = ({ user, isOpen, handleClose, tabs }) => {
                   className={classes.containedPrimary}
                   startIcon={editMode ? <CheckIcon /> : <EditIcon />}
                   onClick={toggleSaveMode}
-                  disabled={isEditButtonDisabled()}>
+                  disabled={isEditButtonDisabled()}
+                >
                   {editMode ? t('LABEL_SAVE') : t('LABEL_EDIT_PROFILE')}
                 </Button>
               </Grid>

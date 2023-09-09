@@ -30,7 +30,8 @@ const People = () => {
                   bgcolor: !selectedUser.socketId == user.socketId ? 'primary.light' : null,
                   cursor: 'pointer',
                 },
-              }}>
+              }}
+            >
               <ListItemAvatar>
                 <Avatar alt={user.username} />
               </ListItemAvatar>

@@ -57,7 +57,8 @@ const Conversation = ({ conversation }) => {
           <MessageText
             bgColour={message.dm ? 'honeydew' : message.fromMe ? '' : 'white'}
             text={message.dm ? 'black' : message.fromMe ? 'white' : 'black'}
-            border={message.fromMe ? '0px' : '2px'}>
+            border={message.fromMe ? '0px' : '2px'}
+          >
             {message.text}
           </MessageText>
           <MessageSender>{subText}</MessageSender>

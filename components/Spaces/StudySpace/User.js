@@ -7,7 +7,8 @@ const User = () => {
     <Paper elevate={10} className="rounded-lg">
       <Box
         sx={{ bgcolor: 'primary.light', color: 'primary.dark' }}
-        className="flex flex-col justify-center items-center p-5 rounded-lg w-full h-full">
+        className="flex flex-col justify-center items-center p-5 rounded-lg w-full h-full"
+      >
         <Avatar>
           <PersonIcon />
         </Avatar>

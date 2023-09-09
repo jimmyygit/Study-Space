@@ -196,7 +196,8 @@ const Header = (props) => {
                 className="mr-2 outline-none"
                 color="inherit"
                 aria-label="menu"
-                size="large">
+                size="large"
+              >
                 <MenuIcon />
               </IconButton>
             </Hidden>
@@ -219,7 +220,8 @@ const Header = (props) => {
                   style={{
                     border: '1.5px solid rgba(107, 114, 128)',
                   }}
-                  onClick={() => signOut()}>
+                  onClick={() => signOut()}
+                >
                   {t('LABEL_SIGNOUT')}
                 </Button>
               ) : (
@@ -230,7 +232,8 @@ const Header = (props) => {
                     onClick={handleLogIn}
                     style={{
                       border: '1.5px solid rgba(107, 114, 128)',
-                    }}>
+                    }}
+                  >
                     {t('LABEL_LOGIN')}
                   </Button>
                   <Button
@@ -239,7 +242,8 @@ const Header = (props) => {
                     onClick={handleSignUp}
                     style={{
                       border: '1.5px solid rgba(107, 114, 128)',
-                    }}>
+                    }}
+                  >
                     {t('LABEL_SIGNUP')}
                   </Button>
                 </>

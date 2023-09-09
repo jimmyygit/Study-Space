@@ -50,168 +50,168 @@ export const SocketProvider = ({ loading, username, role, children }) => {
       console.warn(err);
     }
 
-                        // socketRef.current = io('http://localhost:8080');
+    // socketRef.current = io('http://localhost:8080');
 
-                        // /**
-                        //  * Notifiy users in the room that this new user joined
-                        //  */
-                        // const roomId = router.query.id ? router.query.id[0] : null;
-                        // socketRef.current.emit('join room', { roomId, userId: user?._id, username, role });
+    // /**
+    //  * Notifiy users in the room that this new user joined
+    //  */
+    // const roomId = router.query.id ? router.query.id[0] : null;
+    // socketRef.current.emit('join room', { roomId, userId: user?._id, username, role });
 
-                        // /**
-                        //  * Get information of others users in the room and add them as peers
-                        //  * Also populates conversation with redis cache
-                        //  */
-                        // socketRef.current.on('other users', ({ users, conversation }) => {
-                        //   const newParticipants = [];
-                        //   newParticipants.push(username);
+    // /**
+    //  * Get information of others users in the room and add them as peers
+    //  * Also populates conversation with redis cache
+    //  */
+    // socketRef.current.on('other users', ({ users, conversation }) => {
+    //   const newParticipants = [];
+    //   newParticipants.push(username);
 
-                        //   users.forEach((user) => {
-                        //     createPeer(user.socketId, user.username, user.role);
-                        //     newParticipants.push(user.username);
-                        //   });
-                        //   setParticipants([...newParticipants]);
+    //   users.forEach((user) => {
+    //     createPeer(user.socketId, user.username, user.role);
+    //     newParticipants.push(user.username);
+    //   });
+    //   setParticipants([...newParticipants]);
 
-                        //   if (conversation) {
-                        //     conversation = JSON.parse(conversation).map((obj) => {
-                        //       if (!obj) return {};
-                        //       obj = JSON.parse(obj);
-                        //       if (!obj?.message || !obj?.username) return {};
-                        //       return { text: obj?.message, sender: obj?.username, fromMe: obj?.username == username, dm: false };
-                        //     });
-                        //     conversation = conversation.filter((obj) => obj !== {});
-                        //     setConversation(conversation);
-                        //   }
-                        // });
+    //   if (conversation) {
+    //     conversation = JSON.parse(conversation).map((obj) => {
+    //       if (!obj) return {};
+    //       obj = JSON.parse(obj);
+    //       if (!obj?.message || !obj?.username) return {};
+    //       return { text: obj?.message, sender: obj?.username, fromMe: obj?.username == username, dm: false };
+    //     });
+    //     conversation = conversation.filter((obj) => obj !== {});
+    //     setConversation(conversation);
+    //   }
+    // });
 
-                        // /**
-                        //  * Add admins
-                        //  */
-                        // socketRef.current.on('admins', (payload) => {
-                        //   setAdmins(() => payload.admins.map((admin) => ({ username: admin.username, socketId: admin.socketId })));
-                        // });
+    // /**
+    //  * Add admins
+    //  */
+    // socketRef.current.on('admins', (payload) => {
+    //   setAdmins(() => payload.admins.map((admin) => ({ username: admin.username, socketId: admin.socketId })));
+    // });
 
-                        // /**
-                        //  * Add new user that joins after you as peer
-                        //  */
-                        // socketRef.current.on('offer', (payload) => {
-                        //   addPeer(payload);
+    // /**
+    //  * Add new user that joins after you as peer
+    //  */
+    // socketRef.current.on('offer', (payload) => {
+    //   addPeer(payload);
 
-                        //   setParticipants((curParticipants) => [...curParticipants, payload.username]);
-                        // });
+    //   setParticipants((curParticipants) => [...curParticipants, payload.username]);
+    // });
 
-                        // /**
-                        //  * Add admins that join
-                        //  */
-                        // socketRef.current.on('new admin', (payload) => {
-                        //   setAdmins(([...prev]) => {
-                        //     prev.push({
-                        //       username: payload.username,
-                        //       socketId: payload.socketId,
-                        //     });
-                        //     return prev;
-                        //   });
-                        // });
+    // /**
+    //  * Add admins that join
+    //  */
+    // socketRef.current.on('new admin', (payload) => {
+    //   setAdmins(([...prev]) => {
+    //     prev.push({
+    //       username: payload.username,
+    //       socketId: payload.socketId,
+    //     });
+    //     return prev;
+    //   });
+    // });
 
-                        // /**
-                        //  * Load signal of new user
-                        //  */
-                        // socketRef.current.on('answer', (payload) => {
-                        //   const peerObj = peersRef.current.find((p) => p.peerId === payload.id);
-                        //   peerObj.isAudioEnabled = payload.isAudioEnabled;
-                        //   peerObj.isVideoEnabled = payload.isVideoEnabled;
-                        //   peerObj.statusBubble = payload.statusBubble;
-                        //   peerObj.peer.signal(payload.signal);
-                        //   setPeers((prev) => [...prev]); // force refresh in VideoStreams component
-                        // });
+    // /**
+    //  * Load signal of new user
+    //  */
+    // socketRef.current.on('answer', (payload) => {
+    //   const peerObj = peersRef.current.find((p) => p.peerId === payload.id);
+    //   peerObj.isAudioEnabled = payload.isAudioEnabled;
+    //   peerObj.isVideoEnabled = payload.isVideoEnabled;
+    //   peerObj.statusBubble = payload.statusBubble;
+    //   peerObj.peer.signal(payload.signal);
+    //   setPeers((prev) => [...prev]); // force refresh in VideoStreams component
+    // });
 
-                        // /**
-                        //  * Receiving message and updating conversation
-                        //  */
-                        // socketRef.current.on('message', (payload) => {
-                        //   setConversation((prevConversation) => {
-                        //     return [
-                        //       ...prevConversation,
-                        //       { text: payload.message, sender: payload.username, fromMe: payload.username == username, dm: false },
-                        //     ];
-                        //   });
-                        // });
+    // /**
+    //  * Receiving message and updating conversation
+    //  */
+    // socketRef.current.on('message', (payload) => {
+    //   setConversation((prevConversation) => {
+    //     return [
+    //       ...prevConversation,
+    //       { text: payload.message, sender: payload.username, fromMe: payload.username == username, dm: false },
+    //     ];
+    //   });
+    // });
 
-                        // /**
-                        //  * Receiving dm and updating conversation
-                        //  */
-                        // socketRef.current.on('dm', (payload) => {
-                        //   setConversation((prevConversation) => {
-                        //     return [
-                        //       ...prevConversation,
-                        //       {
-                        //         text: payload.message,
-                        //         recipient: payload.recipient,
-                        //         sender: payload.sender,
-                        //         fromMe: payload.sender == username,
-                        //         dm: true,
-                        //       },
-                        //     ];
-                        //   });
-                        // });
+    // /**
+    //  * Receiving dm and updating conversation
+    //  */
+    // socketRef.current.on('dm', (payload) => {
+    //   setConversation((prevConversation) => {
+    //     return [
+    //       ...prevConversation,
+    //       {
+    //         text: payload.message,
+    //         recipient: payload.recipient,
+    //         sender: payload.sender,
+    //         fromMe: payload.sender == username,
+    //         dm: true,
+    //       },
+    //     ];
+    //   });
+    // });
 
-                        // /**
-                        //  * Peer mutes/unmutes mic
-                        //  */
-                        // socketRef.current.on('isAudioEnabled', ({ id, enabled }) => {
-                        //   const peerObj = peersRef.current.find((peerObj) => peerObj.peerId == id);
-                        //   peerObj.isAudioEnabled = enabled;
-                        //   setParticipants((prev) => [...prev]); // force refresh in VideoStreams component
-                        // });
+    // /**
+    //  * Peer mutes/unmutes mic
+    //  */
+    // socketRef.current.on('isAudioEnabled', ({ id, enabled }) => {
+    //   const peerObj = peersRef.current.find((peerObj) => peerObj.peerId == id);
+    //   peerObj.isAudioEnabled = enabled;
+    //   setParticipants((prev) => [...prev]); // force refresh in VideoStreams component
+    // });
 
-                        // /**
-                        //  * Peer turns on/off video
-                        //  */
-                        // socketRef.current.on('isVideoEnabled', ({ id, enabled }) => {
-                        //   const peerObj = peersRef.current.find((peerObj) => peerObj.peerId == id);
-                        //   peerObj.isVideoEnabled = enabled;
-                        //   setParticipants((prev) => [...prev]); // force refresh in VideoStreams component
-                        // });
+    // /**
+    //  * Peer turns on/off video
+    //  */
+    // socketRef.current.on('isVideoEnabled', ({ id, enabled }) => {
+    //   const peerObj = peersRef.current.find((peerObj) => peerObj.peerId == id);
+    //   peerObj.isVideoEnabled = enabled;
+    //   setParticipants((prev) => [...prev]); // force refresh in VideoStreams component
+    // });
 
-                        // /**
-                        //  * Peer status bubble changes
-                        //  */
-                        // socketRef.current.on('statusBubble', ({ id, statusBubble }) => {
-                        //   const peerObj = peersRef.current.find((p) => p.peerId === id);
-                        //   peerObj.statusBubble = statusBubble;
-                        //   setParticipants((prev) => [...prev]); // force refresh in VideoStreams component
-                        // });
+    // /**
+    //  * Peer status bubble changes
+    //  */
+    // socketRef.current.on('statusBubble', ({ id, statusBubble }) => {
+    //   const peerObj = peersRef.current.find((p) => p.peerId === id);
+    //   peerObj.statusBubble = statusBubble;
+    //   setParticipants((prev) => [...prev]); // force refresh in VideoStreams component
+    // });
 
-                        // /**
-                        //  * Remove user as a peer and participant when disconnected
-                        //  */
-                        // socketRef.current.on('user disconnect', ({ users }) => {
-                        //   let usersPeerId = [];
-                        //   let participantNames = [];
-                        //   if (users) {
-                        //     usersPeerId = users.map((user) => user.socketId);
-                        //     participantNames = users.map((user) => user.username);
-                        //   }
-                        //   if (usersPeerId.length > 0) {
-                        //     peersRef.current.forEach((peerRef, index) => {
-                        //       if (!usersPeerId.includes(peerRef.peerId)) {
-                        //         peerRef.peer.destroy();
-                        //         setPeers(([...prev]) => {
-                        //           prev.splice(index, 1);
-                        //           return prev;
-                        //         });
-                        //         setParticipants((prevParticipants) => intersection(prevParticipants, participantNames));
-                        //       }
-                        //     });
-                        //   }
-                        // });
+    // /**
+    //  * Remove user as a peer and participant when disconnected
+    //  */
+    // socketRef.current.on('user disconnect', ({ users }) => {
+    //   let usersPeerId = [];
+    //   let participantNames = [];
+    //   if (users) {
+    //     usersPeerId = users.map((user) => user.socketId);
+    //     participantNames = users.map((user) => user.username);
+    //   }
+    //   if (usersPeerId.length > 0) {
+    //     peersRef.current.forEach((peerRef, index) => {
+    //       if (!usersPeerId.includes(peerRef.peerId)) {
+    //         peerRef.peer.destroy();
+    //         setPeers(([...prev]) => {
+    //           prev.splice(index, 1);
+    //           return prev;
+    //         });
+    //         setParticipants((prevParticipants) => intersection(prevParticipants, participantNames));
+    //       }
+    //     });
+    //   }
+    // });
 
-                        // /**
-                        //  * Remove admin when disconnected
-                        //  */
-                        // socketRef.current.on('admin disconnect', ({ admins }) => {
-                        //   setAdmins(() => admins.map((admin) => ({ username: admin.username, socketId: admin.socketId })));
-                        // });
+    // /**
+    //  * Remove admin when disconnected
+    //  */
+    // socketRef.current.on('admin disconnect', ({ admins }) => {
+    //   setAdmins(() => admins.map((admin) => ({ username: admin.username, socketId: admin.socketId })));
+    // });
   };
 
   // ensures initRoom only runs once

@@ -13,7 +13,8 @@ const LandingSpaces = ({ data }) => {
           xs={12}
           md={6}
           lg={4}
-          className="cursor-pointer transform hover:scale-105 transition ease-out duration-200">
+          className="cursor-pointer transform hover:scale-105 transition ease-out duration-200"
+        >
           <SpaceCard name={card.name} description={card.description} headCount={card.headCount} music={card.music} />
         </Grid>
       ))}

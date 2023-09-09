@@ -63,7 +63,8 @@ const Music = ({ tabs }) => {
             <Button
               key={tabObj.title + '_TAB'}
               className={classNames([classes.tab, tabIndex === index && classes.activeTab])}
-              onClick={() => setTabIndex(index)}>
+              onClick={() => setTabIndex(index)}
+            >
               <Tab>
                 <Typography variant="subtitle2">{tabObj.title}</Typography>
               </Tab>

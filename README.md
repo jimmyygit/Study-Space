@@ -1,7 +1,9 @@
 # About
+
 ![image](./public/images/study_space.png)
 
 Join other students in messaging, video, and voice chatting while being productive and studying!
+
 # Getting Started 🚀🚀🚀
 
 To start the frontend, simply run

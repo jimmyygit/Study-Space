@@ -9,12 +9,7 @@ export const DIRECTIONS = {
 
 const BigFeature = ({ title, body, img, direction }) => {
   return (
-    <Grid
-      container
-      spacing={4}
-      alignItems="center"
-      direction={direction}
-      className="m-0 w-full p-12">
+    <Grid container spacing={4} alignItems="center" direction={direction} className="m-0 w-full p-12">
       <Grid item xs={12} md={6}>
         <Typography variant="h5">{title}</Typography>
         <Typography variant="body1" color="textPrimary">

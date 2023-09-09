@@ -72,12 +72,7 @@ const CreateRoom = () => {
             value={roomId}
             onChange={(e) => setRoomId(e.target.value)}
           />
-          <Button
-            disabled
-            fullWidth
-            variant="contained"
-            color="primary"
-            onClick={() => router.push(`/room/${roomId}`)}>
+          <Button disabled fullWidth variant="contained" color="primary" onClick={() => router.push(`/room/${roomId}`)}>
             JOIN
           </Button>
           <Typography component="h2" variant="h5" className="pt-5 mt-5 text-md">

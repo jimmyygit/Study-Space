@@ -16,3 +16,5 @@ const TodoSchema = mongoose.Schema({
 });
 
 export default TodoSchema;
+
+// mongoose schemas for todo

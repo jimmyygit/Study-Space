@@ -37,13 +37,15 @@ const People = ({ participants, username }) => {
         onClose={() => setModalOpen(false)}
         classes={{ paper: classes.paper }}
         fullWidth
-        maxWidth="md">
+        maxWidth="md"
+      >
         <Grid className="p-5 flex flex-col align-items-center justify-items-center">
           <Typography
             variant="h6"
             component="h1"
             style={{ color: '#4E3276', textAlign: 'center' }}
-            className="font-bold">
+            className="font-bold"
+          >
             {roomId.id}
           </Typography>
           <CopyToClipboard text={roomId.id}>

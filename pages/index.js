@@ -86,7 +86,7 @@ export const getStaticProps = async ({ locale }) => {
         },
         {
           title: 'Virtual study enhancements',
-          body: 'Virtual study enhancements help you improve your studying! Don\'t forget to use the Pomodoro study timer, Spotify built-in music player to share songs, and built-in to-do app.',
+          body: "Virtual study enhancements help you improve your studying! Don't forget to use the Pomodoro study timer, Spotify built-in music player to share songs, and built-in to-do app.",
           img: '/images/study_space.png',
         },
         {

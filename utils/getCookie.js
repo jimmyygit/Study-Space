@@ -10,3 +10,5 @@ const getCookie = (cookies, name) => {
 };
 
 export default getCookie;
+
+//

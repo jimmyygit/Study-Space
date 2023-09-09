@@ -11,7 +11,8 @@ const Card = ({ isClickable, roundedFull, onClick, children }) => {
       className={classNames('rounded-none rounded-tr-xl rounded-bl-xl overflow-hidden h-full', {
         'rounded-xl': roundedFull,
         'cursor-pointer transform hover:-translate-y-1 transition ease-out duration-200': isClickable,
-      })}>
+      })}
+    >
       {children}
     </Paper>
   );

@@ -32,7 +32,8 @@ const AuthDialog = ({
       open={open}
       onClose={() => setOpen(false)}
       aria-labelledby="Login/Signup Modal"
-      className={styles.Dialogue}>
+      className={styles.Dialogue}
+    >
       <Grid container className="my-8" alignItems="center" direction="row">
         <Grid item xs={12}>
           <Snackbar open={showSuccessAlert} autoHideDuration={3000} onClose={() => setShowSuccessAlert(false)}>
@@ -57,7 +58,8 @@ const AuthDialog = ({
                   isSignUp && !validSignUp ? 'bg-gray-400' : styles.submitButtonEnabled
                   // 'bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:from-pink-500 hover:to-yellow-400 transition duration-200 ease-in-out'
                 } my-12 overflow-hidden text-white font-bold py-2 px-4 rounded-full w-8/12 outline-none`}
-                disabled={isSignUp && !validSignUp}>
+                disabled={isSignUp && !validSignUp}
+              >
                 <span>{t(btnText)}</span>
               </Button>
               <div className="flex w-full justify-center items-center">
@@ -74,17 +76,23 @@ const AuthDialog = ({
                 <IconButton
                   className="mr-4 outline-none"
                   onClick={() =>
-                    signIn(providers?.facebook.id, { callbackUrl: `${process.env.NEXT_PUBLIC_URL}/dashboard` })
+                    signIn(providers?.facebook.id, {
+                      callbackUrl: `${process.env.NEXT_PUBLIC_URL}/dashboard`,
+                    })
                   }
-                  size="large">
+                  size="large"
+                >
                   <Image src="/images/facebook.svg" alt="Facebook Login" height="32" width="32" />
                 </IconButton>
                 <IconButton
                   className="outline-none"
                   onClick={() =>
-                    signIn(providers?.google.id, { callbackUrl: `${process.env.NEXT_PUBLIC_URL}/dashboard` })
+                    signIn(providers?.google.id, {
+                      callbackUrl: `${process.env.NEXT_PUBLIC_URL}/dashboard`,
+                    })
                   }
-                  size="large">
+                  size="large"
+                >
                   <Image src="/images/google.svg" alt="Facebook Login" height="32" width="32" />
                 </IconButton>
               </div>
@@ -98,7 +106,8 @@ const AuthDialog = ({
                 className="inline cursor-pointer"
                 onClick={() => {
                   setIsSignUp((isSignUp) => !isSignUp);
-                }}>
+                }}
+              >
                 {isSignUp ? t('LABEL_LOGIN') : t('LABEL_SIGNUP')}
               </Box>
             </Typography>

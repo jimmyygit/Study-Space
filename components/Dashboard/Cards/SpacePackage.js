@@ -17,7 +17,8 @@ const SpacePackage = ({ spaceCardData, spaceCardModalData }) => {
         className="h-full"
         onClick={() => {
           setOpen(true);
-        }}>
+        }}
+      >
         <SpaceCard isClickable={true} name={name} description={description} headCount={headCount} music={music} />
       </div>
       <SpaceCardModal
@@ -25,7 +26,8 @@ const SpacePackage = ({ spaceCardData, spaceCardModalData }) => {
         handleClose={() => setOpen(false)}
         friends={friends}
         participants={participants}
-        spaceId={spaceId}>
+        spaceId={spaceId}
+      >
         <SpaceCard name={name} description={description} headCount={headCount} music={music} />
       </SpaceCardModal>
     </>

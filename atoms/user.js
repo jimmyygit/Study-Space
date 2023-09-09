@@ -1,3 +1,5 @@
+// user atoms
+
 import { atom } from 'recoil';
 
 export const session = atom({

@@ -30,7 +30,8 @@ export default function Timer() {
             </Box>
             <Box
               sx={{ color: 'primary.info' }}
-              className="flex flex-row justify-between text-sm tracking-tight font-semibold">
+              className="flex flex-row justify-between text-sm tracking-tight font-semibold"
+            >
               <Typography variant="body1">12:10 pm </Typography>
               <Typography variant="body1">2:30 pm</Typography>
             </Box>

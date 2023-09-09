@@ -91,12 +91,14 @@ const CreateSpaceDialog = ({ open, setOpen }) => {
         },
       }}
       onClose={() => setOpen(false)}
-      aria-labelledby="Create Space Dialog">
+      aria-labelledby="Create Space Dialog"
+    >
       <Grid
         container
         sx={{ p: (theme) => theme.spacing(6), pb: (theme) => theme.spacing(1) }}
         direction="row"
-        spacing={4}>
+        spacing={4}
+      >
         <Typography
           variant="h4"
           sx={{
@@ -104,7 +106,8 @@ const CreateSpaceDialog = ({ open, setOpen }) => {
             width: '100%',
             ml: (theme) => theme.spacing(4),
             mb: (theme) => `-${theme.spacing(2)}}`,
-          }}>
+          }}
+        >
           Create a new space
         </Typography>
 
@@ -136,13 +139,15 @@ const CreateSpaceDialog = ({ open, setOpen }) => {
             <TextInput required id="csd-study-input" defaultValue="50" textCenter sx={{ width: '6rem' }} />
             <Typography
               variant="subtitle1"
-              sx={{ fontSize: (theme) => theme.spacing(2.5), display: 'inline', mx: '12px' }}>
+              sx={{ fontSize: (theme) => theme.spacing(2.5), display: 'inline', mx: '12px' }}
+            >
               /
             </Typography>
             <TextInput required id="csd-break-input" defaultValue="10" textCenter sx={{ width: '6rem' }} />
             <Typography
               variant="subtitle1"
-              sx={{ fontSize: (theme) => theme.spacing(2.5), display: 'inline', ml: '12px' }}>
+              sx={{ fontSize: (theme) => theme.spacing(2.5), display: 'inline', ml: '12px' }}
+            >
               min
             </Typography>
             <FormControlLabel
@@ -176,7 +181,8 @@ const CreateSpaceDialog = ({ open, setOpen }) => {
             mt: (theme) => theme.spacing(4),
             mb: (theme) => theme.spacing(2),
           }}
-          onClick={createASpace}>
+          onClick={createASpace}
+        >
           Next {loading && <CircularProgress size={30} sx={{ ml: (theme) => theme.spacing(1) }} />}
         </Button>
       </Grid>

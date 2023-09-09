@@ -19,9 +19,7 @@ const ImageOverlay = () => {
   return (
     <DisplayImageContainer>
       <Box sx={{ height: '6rem', width: '6rem', overflow: 'hidden', borderRadius: '9999px', position: 'relative' }}>
-        <div className='w-100 h-100'>
-          Camera Off
-        </div>
+        <div className="w-100 h-100">Camera Off</div>
       </Box>
     </DisplayImageContainer>
   );

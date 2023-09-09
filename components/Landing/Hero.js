@@ -46,7 +46,8 @@ const Hero = ({ setAuthDialogOpen }) => {
               className="normal-case px-10 m-2 rounded-full outline-none text-white bg-gray-500 hover:bg-gray-600"
               style={{
                 border: '1.5px solid rgba(107, 114, 128)',
-              }}>
+              }}
+            >
               {t('LABEL_CREATE_A_SPACE')}
             </Button>
           </div>

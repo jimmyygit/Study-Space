@@ -30,7 +30,11 @@ export const SocketProvider = ({ username, children }) => {
      */
     socketRef.current.on('users', ({ users }) => {
       setUsers(() => {
-        const value = users.map((user) => ({ socketId: user.socketId, username: user.username, role: user.role }));
+        const value = users.map((user) => ({
+          socketId: user.socketId,
+          username: user.username,
+          role: user.role,
+        }));
         setSelectedUser(value[0]);
         return value;
       });

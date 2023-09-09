@@ -24,11 +24,7 @@ const SmallFeatures = ({ features }) => {
         And that&#39;s not all. We have more.
       </Typography>
       <Container className={classes.container}>
-        <Grid
-          container
-          spacing={6}
-          className="m-0 w-full py-4 px-12"
-          direction="row">
+        <Grid container spacing={6} className="m-0 w-full py-4 px-12" direction="row">
           {features.map((feature, index) => (
             <SmallFeature key={index} feature={feature} />
           ))}

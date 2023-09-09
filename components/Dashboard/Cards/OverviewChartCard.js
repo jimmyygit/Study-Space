@@ -6,10 +6,7 @@ const OverviewChartCard = () => {
   return (
     <Card>
       <Box className="text-left p-3">
-        <Typography
-          variant="h5"
-          align="center"
-          className="text-primary-dark "></Typography>
+        <Typography variant="h5" align="center" className="text-primary-dark "></Typography>
         <Typography variant="body1" className="text-primary-text">
           hello
         </Typography>

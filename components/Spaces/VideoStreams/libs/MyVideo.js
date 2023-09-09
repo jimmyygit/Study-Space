@@ -23,7 +23,12 @@ const MyVideo = () => {
         muted
         ref={myScreenShare}
         autoPlay
-        style={{ display: isScreenShare ? 'block' : 'none', objectFit: 'cover', height: '18rem', width: '32rem' }}
+        style={{
+          display: isScreenShare ? 'block' : 'none',
+          objectFit: 'cover',
+          height: '18rem',
+          width: '32rem',
+        }}
       />
     </>
   );
