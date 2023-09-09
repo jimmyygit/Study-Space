@@ -26,6 +26,7 @@ const CallOptions = () => {
     setLayout,
     openEntryDialog,
     isMyAudioEnabled,
+    isMyVideoEnabled,
     toggleMyAudio,
     toggleMyVideo,
     shareScreen,
@@ -37,8 +38,6 @@ const CallOptions = () => {
   const [openLeaveModal, setOpenLeaveModal] = useState(false);
   const [openParticipantsModal, setOpenParticipantsModal] = useState(false);
   const buttonRef = useRef();
-
-  let isMyVideoEnabled = false;
 
   const handleToggle = () => {
     setOpenOptions((openOptions) => !openOptions);
@@ -63,7 +62,7 @@ const CallOptions = () => {
         <IconButton onClick={toggleMyAudio} size="large">
           {isMyAudioEnabled ? <Mic /> : <MicOff />}
         </IconButton>
-        <IconButton size="large">
+        <IconButton onClick={toggleMyVideo} size="large">
           {isMyVideoEnabled ? <Videocam /> : <VideocamOff className="text-red-500" />}
         </IconButton>
         <IconButton onClick={shareScreen} size="large">
