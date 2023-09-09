@@ -96,7 +96,7 @@ export const SocketProvider = ({ username, children }) => {
   const roomInitialized = useRef(false);
   useEffect(() => {
     if (!roomInitialized.current) {
-      initRoom();
+      // initRoom();
       roomInitialized.current = true;
     }
   }, []);

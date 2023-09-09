@@ -218,7 +218,7 @@ export const SocketProvider = ({ loading, username, role, children }) => {
   const roomInitialized = useRef(false);
   useEffect(() => {
     if (loading != LOADING_ENUM.LOADING && !roomInitialized.current) {
-      initRoom();
+      // initRoom();
       roomInitialized.current = true;
     }
   }, [loading]);
