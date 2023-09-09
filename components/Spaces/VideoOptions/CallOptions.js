@@ -25,7 +25,6 @@ const CallOptions = () => {
   const {
     setLayout,
     openEntryDialog,
-    isMyVideoEnabled,
     isMyAudioEnabled,
     toggleMyAudio,
     toggleMyVideo,
@@ -38,6 +37,8 @@ const CallOptions = () => {
   const [openLeaveModal, setOpenLeaveModal] = useState(false);
   const [openParticipantsModal, setOpenParticipantsModal] = useState(false);
   const buttonRef = useRef();
+
+  let isMyVideoEnabled = false;
 
   const handleToggle = () => {
     setOpenOptions((openOptions) => !openOptions);
@@ -62,8 +63,8 @@ const CallOptions = () => {
         <IconButton onClick={toggleMyAudio} size="large">
           {isMyAudioEnabled ? <Mic /> : <MicOff />}
         </IconButton>
-        <IconButton onClick={toggleMyVideo} size="large">
-          {isMyVideoEnabled ? <Videocam /> : <VideocamOff className='text-red-500'/>}
+        <IconButton size="large">
+          {isMyVideoEnabled ? <Videocam /> : <VideocamOff className="text-red-500" />}
         </IconButton>
         <IconButton onClick={shareScreen} size="large">
           <ScreenShareIcon />
@@ -88,7 +89,7 @@ const CallOptions = () => {
                     Appearance
                   </MenuItem>
                   {!user && (
-                    <MenuItem onClick={changeUsername}>
+                    <MenuItem onClick={() => {}}>
                       <SwitchAccountIcon className="m-1" />
                       Change username
                     </MenuItem>

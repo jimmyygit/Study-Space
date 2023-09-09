@@ -38,6 +38,7 @@ const Conversation = ({ conversation }) => {
   }, []);
 
   const messages = useMemo(() => {
+    return <></>;
     return conversation.map((message, index) => {
       let subText = '';
       if (message.fromMe && message.dm) {

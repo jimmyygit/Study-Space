@@ -11,7 +11,6 @@ import { SpaceProvider } from '@/context/spaces';
 import VideoStreams from '@/components/Spaces/VideoStreams';
 import CallTabs from '@/components/Spaces/CallTabs';
 import * as spotifyState from '@/atoms/spotify';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const CallOptions = dynamic(() => import('@/components/Spaces/VideoOptions/CallOptions'));
 
@@ -24,33 +23,26 @@ const GridContainer = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-between',
 }));
 
-const Room = ({ roomId, spotifyAuthURL }) => {
+const Room = () => {
   const router = useRouter();
   const [showTabs, setShowTabs] = useState(false);
-  const setRoomId = useSetRecoilState(spotifyState.roomId);
-  const setSpotifyAuthURL = useSetRecoilState(spotifyState.spotifyAuthURL);
-  const setSpotifyRefresh = useSetRecoilState(spotifyState.refresh);
+  // const roomId = router.query;
 
-  const initRecoilState = () => {
-    setRoomId(roomId);
-    // setSpotifyAuthURL(spotifyAuthURL);
-    if (router.query && router.query.data) {
-      const spotifyData = JSON.parse(router.query.data);
-
-      // redirected back to room and user clicked signed into Spotify in call tab.
-      const expiresIn = spotifyData.expiresIn * 1000;
-      const date = new Date();
-      const expireDate = addMilliseconds(date, expiresIn);
-      const refreshDate = addMilliseconds(date, expiresIn / 4);
-      setSpotifyRefresh({ expiresIn, expireDate, refreshDate });
-      console.debug('Successfully authenticated with shopify:', spotifyData);
-      // replaces url query to prevent user from copying/pasting space url to friends with unnecessary data
-      router.replace('/room/[...id]', `/room/${roomId}`);
-    }
-  };
+  // const initRecoilState = () => {
+  //   if (router.query && router.query.data) {
+  //     // redirected back to room and user clicked signed into Spotify in call tab.
+  //     const expiresIn = spotifyData.expiresIn * 1000;
+  //     const date = new Date();
+  //     const expireDate = addMilliseconds(date, expiresIn);
+  //     const refreshDate = addMilliseconds(date, expiresIn / 4);
+  //     setSpotifyRefresh({ expiresIn, expireDate, refreshDate });
+  //     // replaces url query to prevent user from copying/pasting space url to friends with unnecessary data
+  //     router.replace('/room/[...id]', `/room/${roomId}`);
+  //   }
+  // };
 
   useEffect(() => {
-    initRecoilState();
+    // initRecoilState();
   }, []);
 
   return (
@@ -58,35 +50,33 @@ const Room = ({ roomId, spotifyAuthURL }) => {
       <GridContainer container>
         <VideoStreams showTabs={showTabs} />
         <CallOptions />
-        <CallTabs showTabs={showTabs} setShowTabs={setShowTabs} spotifyAuthURL={spotifyAuthURL} />
+        <CallTabs showTabs={showTabs} setShowTabs={setShowTabs} />
       </GridContainer>
     </SpaceProvider>
   );
 };
 
-export const getStaticPaths = () => {
-  return {
-    paths: [{ params: { id: ['1'] } }],
-    fallback: true,
-  };
-};
+// export const getStaticPaths = () => {
+//   return {
+//     paths: [{ params: { id: ['1'] } }],
+//     fallback: true,
+//   };
+// };
 
 /**
  * This causes the 12 second server render times. IDK why
  */
-export const getStaticProps = async ({ locale, params }) => {
-  return {
-    props: {
-      roomId: params.id[0],
-      // spotifyAuthURL: `https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=${process.env.SPOTIFY_REDIRECT_URI}&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state`,
-      // ...(await serverSideTranslations(locale, [])),
-      ...(await serverSideTranslations(locale, ['common']))
-    },
-  };
-};
+// export const getStaticProps = async ({ locale, params }) => {
+//   return {
+//     props: {
+//       roomId: params.id[0],
+//       ...(await serverSideTranslations(locale, ['common'])),
+//     },
+//   };
+// };
 
 Room.propTypes = {
-  roomId: PropTypes.string.isRequired,
+  // roomId: PropTypes.string.isRequired,
   // spotifyAuthURL: PropTypes.string.isRequired,
 };
 

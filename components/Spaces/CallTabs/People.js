@@ -27,11 +27,11 @@ const People = ({ participants, username }) => {
       <Button variant="contained" color="primary" fullWidth className="mt-1 mb-2" onClick={() => setModalOpen(true)}>
         INVITE
       </Button>
-      {participants.map((p) => (
+      {/* {participants.map((p) => (
         <p key={uniqueId(p)}>
           {p} {username == p && '(You)'}
         </p>
-      ))}
+      ))} */}
       <Dialog
         open={modalOpen}
         onClose={() => setModalOpen(false)}

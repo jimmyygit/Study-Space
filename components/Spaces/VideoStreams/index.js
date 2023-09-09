@@ -25,21 +25,21 @@ const VideoStreams = ({ showTabs }) => {
       {/* Teachers */}
       <VideosContainer status="upper">
         {role == ROLES.TEACHER.value && <MyVideo />}
-        {peers
+        {/* {peers
           .filter((peerObj) => peerObj.role == ROLES.TEACHER.value)
           .map((peerObj) => {
             return <PeerVideo key={peerObj.peerId} peerObj={peerObj} />;
-          })}
+          })} */}
       </VideosContainer>
 
       {/* Students */}
       <VideosContainer status="lower">
         {role == ROLES.STUDENT.value && <MyVideo />}
-        {peers
+        {/* {peers
           .filter((peerObj) => peerObj.role == ROLES.STUDENT.value)
           .map((peerObj) => {
             return <PeerVideo key={peerObj.peerId} peerObj={peerObj} />;
-          })}
+          })} */}
       </VideosContainer>
     </Grid>
   );

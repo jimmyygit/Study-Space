@@ -21,7 +21,13 @@ const LeaveCallDialog = ({ open, setOpen, leaveCall }) => {
           <LeaveCallButton
             fn={() => {
               router.push('/room');
-              leaveCall();
+              router.push(`/`);
+              setTimeout(() => {
+                window.location.reload();
+                setTimeout(() => {
+                  router.push(`/`);
+                }, 4000);
+              }, 2000);
             }}
             text="Leave Session"
             fillBackground={true}

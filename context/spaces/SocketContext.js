@@ -30,7 +30,7 @@ export const SocketProvider = ({ loading, username, role, children }) => {
   const [conversation, setConversation] = useState([]);
   const [participants, setParticipants] = useState([]);
   const [isMyAudioEnabled, setIsMyAudioEnabled, isMyAudioEnabledRef] = useStateRef(false);
-  const [isMyVideoEnabled, setIsMyVideoEnabled, isMyVideoEnabledRef] = useStateRef(false);
+  const [isMyVideoEnabled, setIsMyVideoEnabled, isMyVideoEnabledRef] = useStateRef(true);
   const [isScreenShare, setIsScreenShare, isScreenShareRef] = useStateRef(false);
 
   const initRoom = async () => {
