@@ -32,7 +32,7 @@ const People = () => {
                 },
               }}>
               <ListItemAvatar>
-                <Avatar alt={user.username} src="/images/avatar/anime.png" />
+                <Avatar alt={user.username} />
               </ListItemAvatar>
               <ListItemText
                 sx={{ textOverflow: 'ellipsis' }}

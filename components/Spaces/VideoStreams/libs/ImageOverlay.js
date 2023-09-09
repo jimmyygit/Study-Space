@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
-import genericPic from '@/public/images/avatar/anime.png';
-
 const DisplayImageContainer = styled(Box)({
   position: 'absolute',
   height: '18rem',
@@ -21,7 +19,9 @@ const ImageOverlay = () => {
   return (
     <DisplayImageContainer>
       <Box sx={{ height: '6rem', width: '6rem', overflow: 'hidden', borderRadius: '9999px', position: 'relative' }}>
-        <Image priority src={genericPic} layout="fill" objectFit="cover"></Image>
+        <div className='w-100 h-100'>
+          Camera Off
+        </div>
       </Box>
     </DisplayImageContainer>
   );

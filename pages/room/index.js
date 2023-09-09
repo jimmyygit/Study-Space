@@ -5,7 +5,6 @@ import { v1 as uuid } from 'uuid';
 import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/client';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Button, Paper, Typography, TextField, CircularProgress } from '@mui/material';
 import { useMutation, gql } from '@apollo/client';
 
@@ -22,31 +21,30 @@ const CREATE_SPACE = gql`
   }
 `;
 
-const CreateRoom = ({ user }) => {
-  const { t } = useTranslation();
+const CreateRoom = () => {
   const router = useRouter();
   const [roomId, setRoomId] = useState('');
   const [roomIsLoading, setRoomIsLoading] = useState(false);
-  const setUser = useSetRecoilState(userState.user);
+  // const setUser = useSetRecoilState(userState.user);
 
   const [createSpace] = useMutation(CREATE_SPACE);
 
   const createNewSpace = async () => {
     setRoomIsLoading(true);
     const spaceId = uuid();
-    setUser(user);
+    // setUser(user);
 
     const spaceInput = {
       // Sample data
       name: 'Pair Programming Session',
       description: '16X 🚀🚀🚀🚀',
-      userId: user?._id,
-      username: user?.name,
+      userId: 0,
+      username: 'James',
       spaceId,
     };
 
     try {
-      const result = await createSpace({ variables: { spaceInput } });
+      // const result = await createSpace({ variables: { spaceInput } });
 
       console.debug('Joining Space:', result);
       router.push(`/room/${spaceId}`);
@@ -60,7 +58,7 @@ const CreateRoom = ({ user }) => {
     <div className="h-screen w-screen grid place-items-center">
       <Paper className="w-96 p-4">
         <Typography component="h1" variant="h5">
-          {t('LABEL_JOIN_A_SPACE')}
+          LABEL_JOIN_A_SPACE
         </Typography>
         <div>
           <TextField
@@ -73,10 +71,10 @@ const CreateRoom = ({ user }) => {
             onChange={(e) => setRoomId(e.target.value)}
           />
           <Button fullWidth variant="contained" color="primary" onClick={() => router.push(`/room/${roomId}`)}>
-            {t('LABEL_JOIN_SPACE')}
+            LABEL_JOIN_SPACE
           </Button>
           <Button fullWidth variant="contained" color="primary" className="my-2" onClick={createNewSpace}>
-            {t('LABEL_CREATE_SPACE')}
+            LABEL_CREATE_SPACE
           </Button>
           {roomIsLoading && <CircularProgress />}
         </div>
@@ -85,27 +83,26 @@ const CreateRoom = ({ user }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
-  const session = await getSession(context);
-  const { name, email } = session?.user;
+// export const getServerSideProps = async (context) => {
+//   const session = await getSession(context);
+//   const [name, email] = ['james', 'james@gmail.com'];
 
-  const apolloClient = initializeApollo();
-  const { data } = await apolloClient.query({
-    query: GET_USER,
-    variables: { name, email },
-  });
+//   const apolloClient = initializeApollo();
+//   const { data } = await apolloClient.query({
+//     query: GET_USER,
+//     variables: { name, email },
+//   });
 
-  const user = { ...session.user, ...data.user };
-  console.debug('User:', user);
+//   const user = { ...session.user, ...data.user };
+//   console.debug('User:', user);
 
-  return {
-    props: {
-      user: JSON.parse(JSON.stringify(user)),
-      ...(await serverSideTranslations(context.locale, ['common'])),
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
-};
+//   return {
+//     props: {
+//       user: JSON.parse(JSON.stringify(user)),
+//       initialApolloState: apolloClient.cacheextr
+//     },
+//   };
+// };
 
 CreateRoom.propTypes = {
   user: PropTypes.object.isRequired,
