@@ -26,32 +26,32 @@ const Hero = ({ setAuthDialogOpen }) => {
         <Grid item xs={12} md={6} className="flex flex-col h-full justify-between items-start py-12">
           <Typography variant="body1"> {t('LABEL_HEY_THERE')} </Typography>
           <div>
-            <Typography variant="h4">{t('LABEL_YOUR_AROMA')}</Typography>
+            <Typography variant="h4">Virtual Study Spaces</Typography>
             <Typography variant="subtitle1">{t('LABEL_INCREASE_PROD')}</Typography>
           </div>
           <div>
-            <Button
+            {/* <Button
               onClick={tryItYourselfHandler}
               className="normal-case px-10 m-2 rounded-full outline-none text-white bg-gray-500 hover:bg-gray-600"
               style={{
                 border: '1.5px solid rgba(107, 114, 128)',
               }}>
               {t('LABEL_TRY_IT_YOURSELF')}
-            </Button>
+            </Button> */}
             <Button
               color="inherit"
               onClick={() => {
-                !session && setAuthDialogOpen(true);
+                router.push('/room');
               }}
-              className="normal-case px-10 m-2 rounded-full outline-none"
+              className="normal-case px-10 m-2 rounded-full outline-none text-white bg-gray-500 hover:bg-gray-600"
               style={{
                 border: '1.5px solid rgba(107, 114, 128)',
               }}>
               {t('LABEL_CREATE_A_SPACE')}
             </Button>
           </div>
-          <Button endIcon={<ArrowDownwardIcon />} className="normal-case outline-none">
-            See what you can do with XXX
+          <Button endIcon={<ArrowDownwardIcon />} className="normal-case outline-none cursor-default">
+            See what you can do with others!
           </Button>
         </Grid>
         <Hidden mdDown>

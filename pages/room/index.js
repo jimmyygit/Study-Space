@@ -22,6 +22,8 @@ const CREATE_SPACE = gql`
 `;
 
 const CreateRoom = () => {
+  const { t } = useTranslation();
+
   const router = useRouter();
   const [roomId, setRoomId] = useState('');
   const [roomIsLoading, setRoomIsLoading] = useState(false);
@@ -58,7 +60,7 @@ const CreateRoom = () => {
     <div className="h-screen w-screen grid place-items-center">
       <Paper className="w-96 p-4">
         <Typography component="h1" variant="h5">
-          LABEL_JOIN_A_SPACE
+          JOIN A SPACE
         </Typography>
         <div>
           <TextField
@@ -70,11 +72,19 @@ const CreateRoom = () => {
             value={roomId}
             onChange={(e) => setRoomId(e.target.value)}
           />
-          <Button fullWidth variant="contained" color="primary" onClick={() => router.push(`/room/${roomId}`)}>
-            LABEL_JOIN_SPACE
+          <Button
+            disabled
+            fullWidth
+            variant="contained"
+            color="primary"
+            onClick={() => router.push(`/room/${roomId}`)}>
+            JOIN
           </Button>
+          <Typography component="h2" variant="h5" className="pt-5 mt-5 text-md">
+            OR CREATE ONE
+          </Typography>
           <Button fullWidth variant="contained" color="primary" className="my-2" onClick={createNewSpace}>
-            LABEL_CREATE_SPACE
+            CREATE
           </Button>
           {roomIsLoading && <CircularProgress />}
         </div>

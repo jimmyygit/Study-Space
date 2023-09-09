@@ -39,7 +39,11 @@ export default createTheme({
   },
   spacing: (factor) => `${0.5 * factor}rem`,
   typography: {
-    fontFamily: 'Ubuntu',
+    fontFamily: 'Arial Black',
+    p: {
+      fontWeight: regular,
+      fontSize: '6rem',
+    },
     h1: {
       fontWeight: medium,
       fontSize: '6rem',
