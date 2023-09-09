@@ -11,6 +11,7 @@ import { useMutation, gql } from '@apollo/client';
 import { initializeApollo } from '@/utils/apollo/client';
 import { GET_USER } from '@/utils/apollo/templates/User';
 import * as userState from 'atoms/user';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const CREATE_SPACE = gql`
   mutation CreateSpaceMutation($spaceInput: CreateSpaceInput!) {
@@ -113,6 +114,12 @@ const CreateRoom = () => {
 //     },
 //   };
 // };
+
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+      ...(await serverSideTranslations(locale, ['common']))
+  }
+});
 
 CreateRoom.propTypes = {
   user: PropTypes.object.isRequired,

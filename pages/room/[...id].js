@@ -11,6 +11,7 @@ import { SpaceProvider } from '@/context/spaces';
 import VideoStreams from '@/components/Spaces/VideoStreams';
 import CallTabs from '@/components/Spaces/CallTabs';
 import * as spotifyState from '@/atoms/spotify';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const CallOptions = dynamic(() => import('@/components/Spaces/VideoOptions/CallOptions'));
 
@@ -79,6 +80,7 @@ export const getStaticProps = async ({ locale, params }) => {
       roomId: params.id[0],
       // spotifyAuthURL: `https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=${process.env.SPOTIFY_REDIRECT_URI}&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state`,
       // ...(await serverSideTranslations(locale, [])),
+      ...(await serverSideTranslations(locale, ['common']))
     },
   };
 };
