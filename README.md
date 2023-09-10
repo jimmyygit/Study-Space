@@ -13,4 +13,4 @@ npm i
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser or see the [demo](https://study-space-omega.vercel.app/).
+Open [http://localhost:3000](http://localhost:3000) with your browser or see the [demo](https://study-space-jimmyygit.vercel.app/).
